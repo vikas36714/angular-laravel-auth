@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="expanded-toolbar">
+  <span>
+    <button mat-button routerLink="/">{{title}}</button>
+    <button mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><mat-icon>home</mat-icon></button>
+  </span>
+  <button mat-button routerLink="/login" *ngIf="!isAuthenticated" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>power_settings_new</mat-icon>
+    Login
+  </button>
+  <button mat-button *ngIf="isAuthenticated" (click)="logOut()">
+    <mat-icon>exit_to_app</mat-icon>
+    Logout
+  </button>
+  <button mat-button routerLink="/signup" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>gamepad</mat-icon>
+    Signup
+  </button>
+</mat-toolbar>
